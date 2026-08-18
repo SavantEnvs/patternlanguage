@@ -1,0 +1,10 @@
+project: savantenvs/patternlanguage
+target: fuzz_pattern
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_pattern/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_pattern
+    libfuzzer: true
+    timeout: 10
+    dictionary: /mayhem/mayhem/fuzz_pattern/fuzz_pattern.dict
